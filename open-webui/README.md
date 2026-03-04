@@ -6,18 +6,10 @@
 Download the quickstart script:
 
 ```bash
-wget <URL_TO_OPEN_WEBUI_QUICKSTART_SH> -O open_webui_quickstart.sh
+wget -O open_webui_quickstart.sh https://raw.githubusercontent.com/sgaiproxy/gb10/main/open-webui/open_webui_quickstart.sh
 chmod +x open_webui_quickstart.sh
 ```
 
-### `open_webui_quickstart.sh`
-
-Paste the content of `open_webui_quickstart.sh` below:
-
-```bash
-# open_webui_quickstart.sh
-# Paste script content here
-```
 
 ## Step 2: Run the script
 
