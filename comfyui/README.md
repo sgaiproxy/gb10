@@ -32,3 +32,9 @@ ssh -p <ssh port> -L 8188:localhost:8188 <user>@<host ip>
 Open WebUI should be accessible through:
 
 - `http://localhost:8188`
+
+
+# Tp stpp containers
+```bash
+docker stop comfyui_sgai
+```
