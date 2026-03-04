@@ -6,5 +6,5 @@ Collection of quickstart scripts for GB10.
 
 ## Available Quickstarts
 
-- [Open-WebUI](quickstart/open-webui/README.md)
-- [ComfyUI](quickstart/comfyui/README.md)
+- [Open-WebUI](open-webui/README.md)
+- [ComfyUI](comfyui/README.md)
