@@ -33,3 +33,9 @@ ssh -p <ssh port> -L 8080:localhost:8080 <user>@<host ip>
 Open WebUI should be accessible through:
 
 - `http://localhost:8080`
+
+
+# To stop containers started by this process:
+docker stop open-webui
+docker stop ollama
+docker stop vllm_qwen2_vl_2b_instruct
