@@ -79,36 +79,6 @@ fi
 echo Run git lfs install
 git lfs install
 
-################################################################################
-# Clone Qwen model to /nfs
-################################################################################
-MODEL_BASE_DIR="${BASEDIR}/llm_models"
-MODEL_ID='Qwen/Qwen2-VL-2B-Instruct'
-MODEL_DIR="${MODEL_BASE_DIR}/${MODEL_ID}"
-
-if [[ -d ${MODEL_DIR} ]]; then 
-	echo ${MODEL_DIR} exists
-else
-	MODEL_VENDOR="${MODEL_ID%%/*}"
-	mkdir -p ${MODEL_BASE_DIR}/${MODEL_VENDOR}
-	echo clone ${MODEL_ID}
-	echo git clone https://huggingface.co/${MODEL_ID} "$MODEL_DIR"
-	git clone https://huggingface.co/${MODEL_ID} "$MODEL_DIR"
-fi
-
-
-
-################################################################################
-# Install git-lfs if missing
-################################################################################
-if ! command -v git-lfs >/dev/null 2>&1; then
-  echo "Installing git-lfs"
-  sudo apt update
-  sudo apt install -y git-lfs
-fi
-
-echo Run git lfs install
-git lfs install
 
 ################################################################################
 # Clone Qwen model to /nfs
@@ -121,7 +91,7 @@ if [[ -d ${MODEL_DIR} ]]; then
 	echo ${MODEL_DIR} exists
 else
 	MODEL_VENDOR="${MODEL_ID%%/*}"
-	mkdir -p ${MODEL_BASE_DIR}/${MODEL_VENDOR}
+	sudo mkdir -p ${MODEL_BASE_DIR}/${MODEL_VENDOR}
 	echo clone ${MODEL_ID}
 	echo git clone https://huggingface.co/${MODEL_ID} "$MODEL_DIR"
 	git clone https://huggingface.co/${MODEL_ID} "$MODEL_DIR"
@@ -131,8 +101,6 @@ fi
 # Run vLLM server
 ################################################################################
 echo "Starting vLLM"
-
-
 
 if docker ps -a --format '{{.Names}}' | grep -wq "${VLLM_CONTAINER}"; then
 	echo "${VLLM_CONTAINER} already running"
