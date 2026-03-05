@@ -19,9 +19,10 @@ if [[ -d ${BASEDIR} ]]; then
 	echo ${BASEDIR} exists
 else
 	echo mkdir ${BASEDIR}
-	mkdir -p $BASEDIR/models/checkpoints
-	mkdir -p $BASEDIR/output
-	mkdir -p $BASEDIR/input
+	sudo mkdir -p $BASEDIR/models/checkpoints
+	sudo mkdir -p $BASEDIR/output
+	sudo mkdir -p $BASEDIR/input
+	sudo chmod -R 777 $BASEDIR
 	
 	## download SD1.5 model
 	cd $BASEDIR/models/checkpoints
