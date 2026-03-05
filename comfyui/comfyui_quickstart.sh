@@ -43,7 +43,7 @@ else
 	cd $BASEDIR/models/diffusion_models
 	wget https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors
 	
-	chmod -R 777 $BASEDIR
+	sudo chmod -R 777 $BASEDIR
 fi
 
 
